@@ -4,24 +4,20 @@ require_relative '../lib/reverse_words'
 
 describe "reverse words" do
   describe "basic tests" do
-    describe "test 1" do
-      it "reverse each word in a sentence with one word" do
-        test_string = "Engineer"
+    it "reverse each word in a sentence with one word" do
+      test_string = "Engineer"
 
-        reverse_words(test_string)
+      reverse_words(test_string)
 
-        test_string.must_equal "reenignE"
-      end
+      test_string.must_equal "reenignE"
     end
 
-    describe "test 2" do
-      it "reverse each word in a sentence with two words" do
-        test_string = "hello, world"
+    it "reverse each word in a sentence with two words" do
+      test_string = "hello, world"
 
-        reverse_words(test_string)
+      reverse_words(test_string)
 
-        test_string.must_equal ",olleh dlrow"
-      end
+      test_string.must_equal ",olleh dlrow"
     end
   end
 
@@ -49,34 +45,28 @@ describe "reverse words" do
 
   # check for edge cases
   describe "edge cases" do
-    describe "edge case 1" do
-      it "reverse each single character word in a sentence with multiple words" do
-        test_string = "a b c d e f g h ? 1 2 4"
+    it "reverse each single character word in a sentence with multiple words" do
+      test_string = "a b c d e f g h ? 1 2 4"
 
-        reverse_words(test_string)
+      reverse_words(test_string)
 
-        test_string.must_equal "a b c d e f g h ? 1 2 4"
-      end
+      test_string.must_equal "a b c d e f g h ? 1 2 4"
     end
 
-    describe "edge case 2" do
-      it "reverse each word in a sentence with multiple words" do
-        test_string = "I strive to engineer the most efficient solutions."
+    it "reverse each word in a sentence with multiple words" do
+      test_string = "I strive to engineer the most efficient solutions."
 
-        reverse_words(test_string)
+      reverse_words(test_string)
 
-        test_string.must_equal "I evirts ot reenigne eht tsom tneiciffe .snoitulos"
-      end
+      test_string.must_equal "I evirts ot reenigne eht tsom tneiciffe .snoitulos"
     end
 
-    describe "edge case 3" do
-      it "reverse words in a sentence with preceeding and trailing white spaces" do
-        test_string = "   evol  "
+    it "reverse words in a sentence with preceeding and trailing white spaces" do
+      test_string = "   evol  "
 
-        reverse_words(test_string)
+      reverse_words(test_string)
 
-        test_string.must_equal "   love  "
-      end
+      test_string.must_equal "   love  "
     end
   end
 end
