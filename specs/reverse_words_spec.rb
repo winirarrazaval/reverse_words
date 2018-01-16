@@ -21,8 +21,9 @@ describe "reverse words" do
     end
   end
 
-  # if it's a string parameter, check for empty
-  describe "empty string input test" do
+  # check for edge cases
+  describe "edge cases" do
+    # if it's a string parameter, check for empty
     it "reverse each word in an empty sentence" do
       test_string = ""
 
@@ -30,10 +31,8 @@ describe "reverse words" do
 
       test_string.must_be_empty
     end
-  end
 
-  # if the parameter is an object, check for nil
-  describe "nil object input test" do
+    # if the parameter is an object, check for nil
     it "nil object passed to reverse words" do
       test_string = nil
 
@@ -41,10 +40,7 @@ describe "reverse words" do
 
       test_string.must_be_nil
     end
-  end
 
-  # check for edge cases
-  describe "edge cases" do
     it "reverse each single character word in a sentence with multiple words" do
       test_string = "a b c d e f g h ? 1 2 4"
 
@@ -53,7 +49,7 @@ describe "reverse words" do
       test_string.must_equal "a b c d e f g h ? 1 2 4"
     end
 
-    it "reverse each word in a sentence with multiple words" do
+    it "reverse each word in a sentence with multiple words of varying lengths" do
       test_string = "I strive to engineer the most efficient solutions."
 
       reverse_words(test_string)
